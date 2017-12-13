@@ -18,13 +18,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from ef59 device
 $(call inherit-product, device/pantech/ef59/ef59.mk)
 
-# Inherit some common DU stuff.
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/pantech/ef59/ef59-vendor.mk)
 
-PRODUCT_NAME := du_ef59
+PRODUCT_NAME := aosp_ef59
 PRODUCT_DEVICE := ef59
 PRODUCT_MANUFACTURER := PANTECH
 PRODUCT_MODEL := VEGA SECRET NOTE

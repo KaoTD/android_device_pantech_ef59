@@ -1,1 +1,1 @@
-add_lunch_combo du_ef59-userdebug
+add_lunch_combo aosp_ef59-userdebug
