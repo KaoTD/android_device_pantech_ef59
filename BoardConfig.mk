@@ -46,8 +46,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x01e00000
 BOARD_DTBTOOL_ARGS := -2
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_CONFIG := lineage_ef59_defconfig
-TARGET_KERNEL_SOURCE := kernel/pantech/msm8x74
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := /home/kaotd_vega/los/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/arm-eabi-
+TARGET_KERNEL_SOURCE := kernel/pantech/msm8974
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := /home/kaotd_vega/los/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -88,10 +88,6 @@ BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 RED_LED_PATH := "/sys/class/leds/led:rgb_red/brightness"
 GREEN_LED_PATH := "/sys/class/leds/led:rgb_green/brightness"
 BLUE_LED_PATH := "/sys/class/leds/led:rgb_blue/brightness"
-
-# CM Hardware
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += $(PLATFORM_PATH)/lineagehw
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
