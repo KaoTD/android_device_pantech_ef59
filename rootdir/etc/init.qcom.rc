@@ -180,6 +180,10 @@ on boot
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
 # msm specific files that need to be created on /data
+
+# DNM
+rm /data/logcat.txt
+
 on post-fs-data
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
@@ -374,6 +378,12 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
+
+# DNM
+service logcat_debug /system/bin/logcat -b all -f /data/logcat.txt -v threadtime
+    class main
+    user root
+    group system
 
 service rmt_storage /system/bin/rmt_storage
     class core

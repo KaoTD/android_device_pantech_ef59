@@ -38,7 +38,7 @@ TARGET_CPU_VARIANT := krait
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0 androidboot.bootdevice=msm_sdcc.1
+BOARD_KERNEL_CMDLINE := console=NULL,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 vmalloc=260M loglevel=0 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive 
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
@@ -133,6 +133,7 @@ TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+SF_START_GRAPHICS_ALLOCATOR_SERVICE := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_ef59
@@ -150,6 +151,11 @@ NXP_CHIP_TYPE := 1
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
+
+# QCOM HAL
+TARGET_QCOM_AUDIO_VARIANT := caf-msm8974
+TARGET_QCOM_MEDIA_VARIANT := caf-msm8974
+TARGET_QCOM_DISPLAY_VARIANT := caf-msm8974
 
 # Radio
 TARGET_RIL_VARIANT := caf

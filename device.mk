@@ -26,7 +26,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     AntHalService \
     com.dsi.ant.antradio_library \
-    libantradio
+    libant
 
 # API (for CTS backward compatibility)
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -84,6 +84,14 @@ PRODUCT_PACKAGES += \
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+
+# DRM HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.drm@1.0-impl
+
+# Configstore HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.configstore@1.0-service
 
 # Dalvik/HWUI
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
@@ -143,8 +151,8 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    lights.msm8974
+    lights.msm8974 \
+    android.hardware.light@2.0-impl
 
 # Media profile
 PRODUCT_COPY_FILES += \
@@ -245,6 +253,24 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh
 
+# RenderScript HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
+# RIL HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.0-impl
+
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libqcomfm_jni \
+    qcom.fmradio \
+    qcom.fmradio.xml
+
+ # FM HIDL interfaces
+ PRODUCT_PACKAGES += \
+    android.hardware.broadcastradio@1.0-impl
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
@@ -252,6 +278,10 @@ PRODUCT_PACKAGES += \
 # Thermal config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:system/etc/thermal-engine-8974.conf
+
+# Thermal HIDL interfaces
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl
 
 # USB
 PRODUCT_PACKAGES += \
