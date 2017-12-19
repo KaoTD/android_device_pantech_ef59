@@ -12,19 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from ef59 device
 $(call inherit-product, device/pantech/ef59/ef59.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit AOSP vendor
+$(call inherit-product, vendor/aosp/config.mk)
 
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/pantech/ef59/ef59-vendor.mk)
 
-PRODUCT_NAME := lineage_ef59
+PRODUCT_NAME := aosp_ef59
 PRODUCT_DEVICE := ef59
 PRODUCT_MANUFACTURER := PANTECH
 PRODUCT_MODEL := VEGA SECRET NOTE
