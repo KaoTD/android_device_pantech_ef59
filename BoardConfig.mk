@@ -24,6 +24,9 @@ TARGET_OTA_ASSERT_DEVICE := ef59,ef59s,ef59k,ef59l
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/bluetooth
 
+# Binder
+TARGET_USES_64_BIT_BINDER := true
+
 # Kernel
 TARGET_KERNEL_CONFIG := LineageOS_ef59_defconfig
 
