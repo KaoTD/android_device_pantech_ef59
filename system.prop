@@ -13,9 +13,10 @@ ro.data.large_tcp_window_size=true
 ro.ril.ext.ecclist=112,911,999,110,122,119,120,000,08,118
 ro.telephony.call_ring.multiple=0
 rild.libargs=-d /dev/smd0
-ro.telephony.default_network=9
+ro.telephony.default_network=10
 ro.use_data_netmgrd=true
 telephony.lteOnGsmDevice=1
+telephony.lteOnCdmaDevice=0
 
 # Audio
 mm.enable.smoothstreaming=true
