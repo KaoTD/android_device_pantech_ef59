@@ -194,7 +194,8 @@ PRODUCT_PACKAGES += \
     nfc_nci.pn54x.default \
     libpn547_fw \
     libnfc \
-    libnfc-nci 
+    libnfc-nci \
+    libnfc_nci_jni
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
