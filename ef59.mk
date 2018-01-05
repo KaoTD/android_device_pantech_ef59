@@ -192,7 +192,9 @@ PRODUCT_PACKAGES += \
     Tag \
     com.android.nfc_extras \
     nfc_nci.pn54x.default \
-    libpn547_fw
+    libpn547_fw \
+    libnfc \
+    libnfc-nci 
 
 # NFC access control + feature files + configuration
 PRODUCT_COPY_FILES += \
