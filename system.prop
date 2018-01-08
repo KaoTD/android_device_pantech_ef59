@@ -89,5 +89,5 @@ persist.sys.isUsbOtgEnabled=true
 persist.pantech.usb.version=0
 
 #OTA Hexagon
-hex.updater.uri=https://raw.githubusercontent.com/HexagonRom/HexUpdate_API/hex-7.1/ef59.json
+hex.updater.uri=https://raw.githubusercontent.com/KaoTD/HexUpdate_API/hex-7.1/ef59.json
 
