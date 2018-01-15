@@ -21,7 +21,7 @@ telephony.lteOnCdmaDevice=0
 # Audio
 mm.enable.smoothstreaming=true
 mm.enable.qcom_parser=37491
-ro.qc.sdk.audio.fluencetype=fluence
+ro.qc.sdk.audio.fluencetype=none
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=false
@@ -33,8 +33,8 @@ audio.offload.multiple.enabled=false
 audio.offload.gapless.enabled=false
 tunnel.audio.encode = false
 media.aac_51_output_enabled=true
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
+audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.24bit.enable=false
 
 # Bluetooth
 bluetooth.hfp.client=1
