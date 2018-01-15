@@ -176,6 +176,7 @@ TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
 TARGET_RIL_VARIANT := caf
+BOARD_RIL_CLASS := $(PLATFORM_PATH)/ril/
 
 # Simple time service client
 BOARD_USES_QC_TIME_SERVICES := true
