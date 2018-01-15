@@ -112,18 +112,6 @@
         <item>0,1</item>
         <item>7,1</item>
     </string-array>
-    
-    <integer-array name="config_data_usage_network_types">
-        <item>0</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>14</item>
-    </integer-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          USB interfaces.  If the device doesn't want to support tething over USB this should
@@ -424,23 +412,5 @@
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$ActiveReceiver</item>
         <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService$SecretCodeReceiver</item>
     </string-array>
-    <array name="config_packagesAllowedAccessToKillSwitch" />
-
-    <string-array name="config_externalCMServices">
-        <item>org.cyanogenmod.platform.internal.CMStatusBarManagerService</item>
-        <item>org.cyanogenmod.platform.internal.ProfileManagerService</item>
-        <item>org.cyanogenmod.platform.internal.PartnerInterfaceService</item>
-        <item>org.cyanogenmod.platform.internal.CMTelephonyManagerService</item>
-        <item>org.cyanogenmod.platform.internal.CMHardwareService</item>
-        <item>org.cyanogenmod.platform.internal.AppSuggestManagerService</item>
-    </string-array>
-    <integer-array name="config_LTE_RSRP_custom_levels">
-        <item>-140</item>
-        <item>-128</item>
-        <item>-118</item>
-        <item>-108</item>
-        <item>-98</item>
-        <item>-44</item>
-    </integer-array>
     
 </resources>
