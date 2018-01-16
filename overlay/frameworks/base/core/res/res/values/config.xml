@@ -371,13 +371,6 @@
         <item>12</item>
     </integer-array>
     
-        <string-array name="config_notificationSignalExtractors">
-        <item>com.android.server.notification.ValidateNotificationPeople</item>
-        <item>com.android.server.notification.PackagePriorityExtractor</item>
-        <item>com.android.server.notification.NotificationIntrusivenessExtractor</item>
-        <item>com.android.server.notification.PackageVisibilityExtractor</item>
-    </string-array>
-    
         <string-array name="config_telephonyHardware">
         <item>0,modem,0,0,0,1,1,1</item>
         <item>1,sim,0,modem</item>
