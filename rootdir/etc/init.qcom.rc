@@ -26,6 +26,7 @@
 #
 
 import init.target.rc
+import init.pantech.usb.rc
 import init.qcom.power.rc
 
 on early-init
@@ -38,24 +39,6 @@ on init
 
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
-
-
-    # TESTING ---- OTG ----
-    mount -o rw,remount /
-    mkdir -p /mnt/media_rw
-    chmod 0777 /mnt/media_rw
-
-    mkdir -p /mnt/media_rw/usbdisk
-    chmod 0777 /mnt/media_rw/usbdisk
-    chgrp media_rw /mnt/media_rw/usbdisk
-
-    mkdir -p /storage/usbdisk
-    chmod 0777 /storage/usbdisk
-    chgrp root /storage/usbdisk
-
-    symlink /storage/usbdisk /usbdisk
-    symlink /storage/usbdisk /mnt/usbdisk
-
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -216,6 +199,7 @@ on post-fs-data
     # we will remap this as /mnt/sdcard with the sdcard fuse tool
     mkdir /data/misc/camera 0770 camera camera
 
+
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
 
     # Create the directories used by the Wireless subsystem
@@ -260,8 +244,6 @@ on post-fs-data
     mkdir /data/misc/sensors 0775 system system
     restorecon_recursive /data/misc/sensors
     mkdir /data/misc/sensor 0775 system system
-
-
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
@@ -310,10 +292,6 @@ on post-fs-data
 
     #Create a folder for SRS to be able to create a usercfg file
     mkdir /data/data/media 0770 media media
-
-service fuse_usbdisk /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbdisk /storage/usbdisk
-    class late_start
-    disabled
 
 # FEATURE_PANTECH_ERR_CRASH_LOGGING   p15060
     chmod 600 /dev/ramdump_modem
@@ -433,6 +411,27 @@ service config_bdaddr /system/bin/btnvtool -O
     class late_start
     user bluetooth
     group bluetooth radio
+
+service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+    class late_start
+    user bluetooth
+    group bluetooth net_bt_admin qcom_diag diag radio
+    seclabel u:r:bluetooth_loader:s0
+    disabled
+    oneshot
+
+on property:bluetooth.hciattach=true
+    start hciattach
+
+on property:bluetooth.hciattach=false
+    setprop bluetooth.status off
+
+service hciattach_ath3k /system/bin/sh /system/etc/init.ath3k.bt.sh
+     class late_start
+     user bluetooth
+     group system bluetooth net_bt_admin misc
+     disabled
+     oneshot
 
 service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
     class late_start
