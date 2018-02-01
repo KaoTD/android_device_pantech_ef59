@@ -32,8 +32,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
+    init.pantech.usb.rc \
+    init.pantech.usb.sh \
     init.target.rc \
     init.qcom.rc \
     init.qcom.power.rc \
